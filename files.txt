@@ -1,0 +1,20 @@
+# Create file
+touch test.txt
+
+# Run container
+docker run -d --name copytest ubuntu <command>
+docker run -d --name copytest ubuntu tail -f /dev/null
+docker exec -it copytest bash
+> mkdir testing
+> exit
+
+# Copy files into container
+docker cp <folder/file> <container>:<path>
+docker cp test.txt copytest:/testing/tests.txt
+docker exec -it copytest bash
+> cd testing
+> ll
+
+# Extract files from container
+docker cp <container>:<path> <folder/file>
+ll
