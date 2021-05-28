@@ -1,0 +1,26 @@
+# List volumes
+docker volume ls
+
+# Create volume
+docker volume create dbdata
+
+# Run container and mount volume
+docker run -d --name db --mount src=<volume>,dst=<container-path> mongo
+docker run -d --name db --mount src=dbdata,dst=/data/db mongo
+docker inspect db
+docker exec -it db bash
+> mongo
+> use platzi
+> db.users.insert({ "nombre": "dresrok" })
+> db.users.find()
+> exit
+
+docker ps
+docker rm -f db
+
+docker run -d --name db --mount src=dbdata,dst=/data/db mongo
+docker exec -it db bash
+> mongo
+> use platzi
+> db.users.find()
+> exit
