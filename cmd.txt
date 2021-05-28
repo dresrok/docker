@@ -6,6 +6,7 @@ docker run -d --name proxy
 docker rm -f <container>
 
 # Run and publish
+docker run --name proxy -p <machine-port>:<container-port> nginx
 docker run --name proxy -p 8080:80 nginx
 docker run --name proxy -d -p 8080:80 nginx
 
