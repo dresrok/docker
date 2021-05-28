@@ -1,0 +1,36 @@
+# Run container
+docker run <image>
+# Run container with a custom name
+docker run --name <custom-name> <image>
+
+# List containers
+docker ps
+docker ps -a
+
+# Inspect container
+docker inspect <container-id/container-name>
+
+# Rename container
+docker rename <old-name> <new-name>
+
+# Remove container
+docker rm <container-id/container-name>
+
+# Remove all containers
+docker container prune
+
+# Interactive mode
+docker run -it ubuntu
+
+# Stop container
+docker stop <container-id/>container-name>
+
+# Run container modifying command
+docker run --name alwaysup -d ubuntu tail -f /dev/null
+
+# Connect to container and execute a new process
+docker exec -it alwaysup bash
+
+# Get process id
+docker inspect --format '{{.State.Pid}}' alwaysup
+kill $pid
