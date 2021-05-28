@@ -1,0 +1,43 @@
+# Create folder
+mkdir dockerdata
+
+# Create container with mongo
+docker run -d --name db mongo
+docker ps
+
+# Connecting to db
+docker exec -it db bash
+> mongo
+> show dbs
+> use platzi
+> show dbs
+> db.users.insert({ "nombre": "Dresrok" })
+> db.users.find()
+> exit
+
+docker ps
+docker rm -f db
+docker ps -a
+
+# Create container saving data
+mkdir mongodata
+pwd
+
+docker run -d --name db -v <machine-path>:<container-path> mongo
+docker run -d --name db -v /Users/sundevs/Documents/Projects/docker/platzi/docker/dockerdata/mongodata:/data/db mongo
+docker exec -it db bash
+> mongo
+> use platzi
+> db.users.insert({ "nombre": "Dresrok" })
+> db.users.find()
+> exit
+
+docker ps
+docker rm -f db
+
+docker run -d --name db -v /Users/sundevs/Documents/Projects/docker/platzi/docker/dockerdata/mongodata:/data/db mongo
+docker ps
+docker exec -it db bash
+mongo
+> use platzi
+> db.users.find()
