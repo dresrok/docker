@@ -1,0 +1,5 @@
+# List images
+docker images ls
+
+# Pull image
+docker pull ubuntu:20.04
