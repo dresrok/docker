@@ -16,3 +16,8 @@ docker image ls
 # Publish image
 docker login
 docker push dresrok/ubuntu:platzi
+
+# Show layers
+docker history ubuntu:platzi
+
+# Docker dive
