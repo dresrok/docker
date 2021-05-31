@@ -1,5 +1,18 @@
 # List images
-docker images ls
+docker image ls
 
 # Pull image
 docker pull ubuntu:20.04
+
+# Build image
+docker build -t ubuntu:platzi .
+docker image ls
+docker run -it ubuntu:platzi
+
+# Tag image
+docker tag ubuntu:platzi dresrok/ubuntu:platzi
+docker image ls
+
+# Publish image
+docker login
+docker push dresrok/ubuntu:platzi
