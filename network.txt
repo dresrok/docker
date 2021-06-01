@@ -1,0 +1,15 @@
+# List network
+docker network ls
+
+# Create network
+docker network create --attachable platzinet
+
+# Inspect network
+docker network inspect platzinet
+
+# Connect
+docker network connect <network> <container>
+docker network connect platzinet db
+docker network connect platzinet app
+
+docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test platziapp
