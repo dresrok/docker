@@ -1,3 +1,4 @@
+# Loop
 docker build -t loop .
 docker run -d --name looper loop
 docker ps
@@ -22,3 +23,14 @@ docker run -d --name looper loop
 docker exec looper ps -ef
 docker stop looper
 docker ps -l
+
+# Ping
+docker build -t ping .
+docker run --name pinger ping
+docker rm pinger
+
+docker build -t ping .
+docker run --name pinger ping
+docker rm pinger
+# Override command
+docker run --name pinger ping google.com
