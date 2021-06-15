@@ -1,0 +1,18 @@
+# Clean containers
+docker container prune
+
+# Remove all containers
+docker rm -f $(docker ps -aq)
+
+# Clean networks
+docker network prune
+
+# Clean volumes
+docker volume prune
+
+# Clean system
+docker system prune
+
+# Add memory restriction
+docker run -d --name app --memory 1g platziapp
+docker stats
