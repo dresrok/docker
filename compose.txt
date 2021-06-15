@@ -4,8 +4,21 @@ docker-compose build
 # Turn on services
 docker-compose up
 
-# Turn on services dettached
+# Turn on services detached
 docker-compose up -d
 
-# Turn off services
+# Turn off and destroy services
 docker-compose down
+
+# Show logs
+docker-compose logs
+
+# Show logs by service
+docker-compose logs app
+docker-compose logs -f app
+
+# Connect to service
+docker-compose exec app bash
+
+# List services
+docker-compose ps
