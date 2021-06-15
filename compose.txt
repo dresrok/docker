@@ -1,0 +1,11 @@
+# Build services
+docker-compose build
+
+# Turn on services
+docker-compose up
+
+# Turn on services dettached
+docker-compose up -d
+
+# Turn off services
+docker-compose down
