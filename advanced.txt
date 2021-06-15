@@ -1,0 +1,24 @@
+docker build -t loop .
+docker run -d --name looper loop
+docker ps
+
+docker stop looper
+# Show last process
+docker ps -l
+docker rm looper
+
+docker run -d --name looper loop
+# kill with SIGTERM
+docker kill looper
+docker rm looper
+
+docker run -d --name looper loop
+# Show process on the container
+docker exec looper ps -ef
+docker rm -f looper
+
+docker build -t loop .
+docker run -d --name looper loop
+docker exec looper ps -ef
+docker stop looper
+docker ps -l
