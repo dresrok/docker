@@ -22,3 +22,6 @@ docker-compose exec app bash
 
 # List services
 docker-compose ps
+
+# Build service
+docker-compose build app
