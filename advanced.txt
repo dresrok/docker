@@ -34,3 +34,9 @@ docker run --name pinger ping
 docker rm pinger
 # Override command
 docker run --name pinger ping google.com
+
+# Multi-stage
+docker build -t prodapp -f build/production.Dockerfile .
+docker run -d --name prod prodapp
+docker ps
+docker exec -it prod bash
