@@ -21,3 +21,10 @@ docker push dresrok/ubuntu:platzi
 docker history ubuntu:platzi
 
 # Docker dive
+
+# CodelyTV
+docker build -t "codelytv-hello-world" .
+docker run --rm -p 8000:80 -it "codelytv-hello-world"
+
+docker build -t "codelytv-hello-world-php-ini" .
+docker run --rm -p 8000:80 -it "codelytv-hello-world-php-ini"
