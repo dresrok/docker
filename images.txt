@@ -28,3 +28,6 @@ docker run --rm -p 8000:80 -it "codelytv-hello-world"
 
 docker build -t "codelytv-hello-world-php-ini" .
 docker run --rm -p 8000:80 -it "codelytv-hello-world-php-ini"
+
+docker build -t "codelytv-hello-world-php-ini" . -f Dockerfile_custom_extension
+docker run --rm -p 8000:80 -it "codelytv-hello-world-php-ini"
