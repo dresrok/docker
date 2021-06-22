@@ -51,3 +51,7 @@ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock docker:19.03.12
 docker build -t "cmd-vs-entrypoint" .
 docker run --rm -it cmd-vs-entrypoint /etc/os-release
 docker run --rm -it --entrypoint /bin/bash cmd-vs-entrypoint
+
+docker build -t "environment-vars" .
+docker run --rm -p 8000:80 "environment-vars"
+docker run --rm -p 8000:80 --env DISPLAY_ERRORS=Off "environment-vars"
