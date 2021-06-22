@@ -46,3 +46,8 @@ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock docker:19.03.12
 > docker ps
 > docker run -d --name app prodapp
 > docker ps
+
+# CodelyTV
+docker build -t "cmd-vs-entrypoint" .
+docker run --rm -it cmd-vs-entrypoint /etc/os-release
+docker run --rm -it --entrypoint /bin/bash cmd-vs-entrypoint
