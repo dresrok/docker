@@ -55,3 +55,12 @@ docker run --rm -it --entrypoint /bin/bash cmd-vs-entrypoint
 docker build -t "environment-vars" .
 docker run --rm -p 8000:80 "environment-vars"
 docker run --rm -p 8000:80 --env DISPLAY_ERRORS=Off "environment-vars"
+
+docker build -t "cache" .
+docker build -t "cache" . -f Dockerfile_best
+docker run --rm -p 8000:80 "cache"
+
+docker build -t "multi-stage" .
+docker build -t "multi-stage" . Dockerfile_better
+docker build -t "multi-stage" . Dockerfile_best
+docker run --rm -p 8000:80 "multi-stage"
