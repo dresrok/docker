@@ -24,3 +24,16 @@ docker exec -it db bash
 > use platzi
 > db.users.find()
 > exit
+
+# CodelyTV
+docker run -it --name vol-test -v /data ubuntu
+> ls -lah
+> ls -lah /data
+
+docker inspect -f "{{json .Mounts}}" vol-test | jq .
+
+docker volume create codely-volume
+docker run -it --name vol-test -v codely-volume:/data ubuntu
+
+docker run -it --name vol-test -v $PWD:/data ubuntu
+> echo "Hello Codely" > /data/hello
