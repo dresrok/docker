@@ -64,3 +64,11 @@ docker build -t "multi-stage" .
 docker build -t "multi-stage" . Dockerfile_better
 docker build -t "multi-stage" . Dockerfile_best
 docker run --rm -p 8000:80 "multi-stage"
+
+# Ports
+docker build -t "my-php-app" .
+docker run --rm -it -p 8000:80 "my-php-app"
+# Restart policies
+docker run -it --restart=always -p 8000:80 my-php-app
+# Resource constraints
+docker run -it --cpus=1.5 --memory=500m --restart=always -p 8000:80 my-php-app
