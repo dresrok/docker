@@ -39,3 +39,7 @@ docker-compose down
 # Orchestration
 docker-compose up
 docker-compose up --build
+
+# Networking
+docker-compose up
+docker network ls
